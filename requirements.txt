@@ -3,5 +3,5 @@ flask-cors
 mysql-connector-python
 pandas
 scikit-learn
-numpy
+numpy==2.3.4
 gunicorn
