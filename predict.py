@@ -172,7 +172,7 @@ def train_model(robot_performance):
     X["robot"] = X["robot"].astype("category").cat.codes
     
     param_distributions = {
-        "n_estimators": randint(100, 201),
+        "n_estimators": randint(3, 5),
         "max_depth": [10, 20, 30, None],
         "min_samples_split": randint(2, 11),
         "min_samples_leaf": randint(1, 5),
@@ -182,6 +182,7 @@ def train_model(robot_performance):
     
     cv_strategy = KFold(n_splits=3, shuffle=True, random_state=42)
     rf = RandomForestRegressor(random_state=42, n_jobs=-1)
+
     
     random_search = RandomizedSearchCV(
         estimator=rf,
