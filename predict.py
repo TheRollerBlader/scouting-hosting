@@ -368,3 +368,8 @@ def predict():
 
 # 5. This is the entry point Plesk/Passenger will use
 application = app
+
+# Server startup for Render.com and local development
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port, debug=False)
