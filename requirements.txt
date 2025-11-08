@@ -1,0 +1,6 @@
+flask
+flask-cors
+mysql-connector-python
+pandas
+scikit-learn==1.4.2
+numpy
